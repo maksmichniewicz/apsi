@@ -22,7 +22,8 @@
 }
 
 \begin{document}	
-			
+	{System centralnego zarządzania wyświetlaczami reklamowymi}
+
 	%
 	% SPIS TRESCI
 	%
@@ -34,49 +35,80 @@
 	%
 
 	\addcontentsline{toc}{chapter}{Wstęp}
-	
-		errare humanum est\\
-	
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-		ut labore et dolore magna aliqua. Ut enim ad 	minim veniam, quis nostrud exercitation 
-		ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-		in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-		cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-	
-	\chapter{Analiza wymagań}
-		
+		Ja to skopiowałem z pliku. Prawdopodobnie trzeba zaktualizować.
 		\section{Opis systemu}
+			W systemie występuje centralny serwer z którym połączone są wyświetlacze reklamowe poprzez sieć internet. Dzięki temu wyświetlacze mogą być rozproszone po każdym obszarze z dostępem do internetu. Do serwera dostęp następuje poprzez przeglądarke WWW. Dzięki takiej architekturze systemu można nim zarządzać z każdego miejsca z dostępem do internetu.
+			\subsection{1.Dostawca treści reklamowej}
+				Dostawca treści ma możliwość zarządzaniem treścią reklamową wyświetlaną na wyświetlaczach. Tworząc nową treść może przetestować ją na testowym wyświetlaczu aby następnie wyświetlić ją na wszystkich wyświetlaczach lub wybranej grupie wyświetlaczy Może tworzyć kampanie, które będą miały określoną datę rozpoczęcia i zakończenia. Dostawców treści może być wielu oraz każdy może mieć ograniczony dostęp tylko do wybranych wyświetlaczy.
+			\subsection{2.Obsługa serwisowa}
+				W celu zapewnienia maksymalnej niezawodności systemu (każdy czas awarii systemu może kosztować dużą kwotę pieniędzy) system powinien być pod nieustanną obserwacją serwisową. System powinien udostępniać informacje na temat stanu wyświetlaczy takich jak:
+				czy występuje połączenie wyświetlacza z serwerem,
+ 				w jakich godzinach wyświetlacz działał i był połączony
+ 				wystąpienie błędów 
+				Serwisant może wykonać zdalnie test diagnostyczny, który stara się wykryć usterki sprzętowe np. dysku twardego. System umożliwia zdalną aktualizacje oprogramowania na wyświetlaczu oraz zmianę jego konfiguracji np. godziny pracy wyświetlacza. W przypadku awarii wyświetlacza system powinien powiadomić serwisanta odpowiedzialnego za dany terminal drogą mailową i SMS-ową. Serwisant może mieć dostęp tylko do wybranych terminali np. występujących w jego mieście lub województwie. 
+			\subsection{3.Właściciel systemu}
+				Właściciel ma dostęp do tych samych funkcji systemu co dostawca treści i serwisant ponadto ma możliwość zarządzania serwisantami i dostawcami treści. Może dodawać, usuwać im konta w systemie oraz zmieniać hasła i przydzielać im konkretne terminale lub grupy terminali.
 		\section{Przeznaczenie systemu}
+
+	\chapter{Analiza wymagań}
 		\section{Wymagania funkcjonalne}
+
 		\section{Wymagania niefunkcjonalne}
-		
+
 	\cleardoublepage
 	\pagestyle{fancy}	
 	
-	\chapter{Rozdział testowy}	
+	\chapter{Specyfikacja przypadków użycia}	
 	
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-		ut labore et dolore magna aliqua. Ut enim ad 	minim veniam, quis nostrud exercitation 
-		ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-		in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-		cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		
-		\section{Testowa sekcja}
-		
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-		ut labore et dolore magna aliqua. Ut enim ad 	minim veniam, quis nostrud exercitation 
-		ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-		in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-		cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		
-		\section{Inna testowa sekcja}
-		
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-		ut labore et dolore magna aliqua. Ut enim ad 	minim veniam, quis nostrud exercitation 
-		ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-		in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-		cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Tutaj będą przypadki użycia na poziomie ogólnym. Inicjowane są przez aktora, więc "nie wystają na zewnątrz". W zasadzie opisują użycie interfejsu. kominukację uzytkownik - system, od strony uzytkownika.\newline
+		Diagramy aktywności mogą się tutaj przydać, na pewno diagramy typu Use Case nie są tutaj ważne.\newline
+		\section{Aktorzy}
+		Klient - użytkownik zalogowany.\newline
+		Potencjalny klient - użytkownik internetu z zewnątrz.\newline
+		Administrator systemu - badająca system od strony technicznej - poprawnego działania.\newline
+		Właściciel / analityk - osoba robiąca statystyki i zestawienia okresowe.\newline
+		...wypisać...\newline
+		możliwe, że jest jakiś aktor pasywny - wtedy trzeba go opisać i zapisać kiedy się uaktywnia (co go uaktywnia [tak chyba będzie działał administrator - przynajmniej w akcjach, gdzie ma reagować na niepożądane działanie systemu].)\newline
+		aktorem prawdopodobnie będą także urządzenia - w naszym przypadku wyświetlacze, które będą aktywnie komunikować się z systemem (np wysyłając powiadomienia o błędzie).\newline
+		\section{Przypadki użycia}
+		Klasyczny przypadek typu BlackBox. Implementacja wewnętrzna systemu jest pomijana na tym etapie. Opis przypadków typu Essential (bez wglądu na implementację) (tzn może byc od razu typu Real, ale wtedy trzymamy się tego od początku do końca).\newline
+		Identyfikacja przypadków użycia koniecznie używając trzech podejść: (slajd 14)\newline
+		Identyfikacja poprzez aktorów,\newline
+		Identyfikacja poprzez zdarzenia,\newline
+		Identyfikacja poprzez funkcje.\newline
+		\newline
+		Mając coś takiego możemy weryfikować spójność, kompletność i niesprzeczność :)\newline
+		...wypisać...\newline
+		{\bf Przypadek użycia - Dodanie reklamy}\newline
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline \hline
+		  Aktor & Użytkownik \\ \hline
+		  ID & TPU1 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik wprowadza nową reklamę i dane o reklamie i warunki na jakich chce ją wyświetlać. \\ \hline
+		  Warunki początkowe & Użytkownik jest zalogowany \\ \hline
+		  Warunki końcowe & ??? \\
+		  \hline
+		\end{tabular}
+
+		Pamiętać o:\newline
+		Przebieg zdarzeń:\newline
+		*typowy,\newline
+		*alternatywne,\newline
+		*wyjątki\newline
+		*opis tekstowy, tabelaryczny,\newline
+		*diagramy aktywności\newline
+
+		{\bf Przebieg zdarzeń TPU1:}\newline
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		  \hline
+		  {\bf Aktor} & {\bf System }\\ \hline
+		  \hline \hline
+		  Użytkownik wybiera akcję (naciska przyscisk) `Dodaj zamówienie` & System wyświetla formularz \\ \hline
+		  Użytkownik wypełnia formularz i wybiera akcję 'Prześlij' & System wyświetla informację o możliwościach zrealizowania zamówienia\\ \hline
+		  Użytkownik zgadza się na warunki wybierając akcję 'Akceptuj' & System pobiera dane i wyświetla komunikat o wprowadzeniu zamówienia \\
+		  \hline
+		\end{tabular}
 		
 \cleardoublepage
 %\pagestyle{empty}
