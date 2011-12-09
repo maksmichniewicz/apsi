@@ -72,22 +72,91 @@
 		Tutaj będą przypadki użycia na poziomie ogólnym. Inicjowane są przez aktora, więc "nie wystają na zewnątrz". W zasadzie opisują użycie interfejsu. kominukację uzytkownik - system, od strony uzytkownika.\newline
 		Diagramy aktywności mogą się tutaj przydać, na pewno diagramy typu Use Case nie są tutaj ważne.\newline
 		\section{Aktorzy}
-		Klient - użytkownik zalogowany.\newline
-		Potencjalny klient - użytkownik internetu z zewnątrz.\newline
-		Administrator systemu - badająca system od strony technicznej - poprawnego działania.\newline
-		Właściciel / analityk - osoba robiąca statystyki i zestawienia okresowe.\newline
-		...wypisać...\newline
+		{\bf Klient} - aktor główny, aktywny - użytkownik zalogowany.\newline
+		{\bf Potencjalny klient} - aktor drugorzędny, aktywny - użytkownik internetu z zewnątrz.\newline
+		{\bf Administrator systemu} - aktor drugorzędny, pasywny - pracownik badający system od strony technicznej - poprawnego działania.\newline
+		{\bf Właściciel / analityk} - aktor główny, aktywny - pracownik robiący statystyki i zestawienia okresowe.\newline
+		...coś jeszcze? wypisać...\newline
 		możliwe, że jest jakiś aktor pasywny - wtedy trzeba go opisać i zapisać kiedy się uaktywnia (co go uaktywnia [tak chyba będzie działał administrator - przynajmniej w akcjach, gdzie ma reagować na niepożądane działanie systemu].)\newline
 		aktorem prawdopodobnie będą także urządzenia - w naszym przypadku wyświetlacze, które będą aktywnie komunikować się z systemem (np wysyłając powiadomienia o błędzie).\newline
-		\section{Przypadki użycia}
-		Klasyczny przypadek typu BlackBox. Implementacja wewnętrzna systemu jest pomijana na tym etapie. Opis przypadków typu Essential (bez wglądu na implementację) (tzn może byc od razu typu Real, ale wtedy trzymamy się tego od początku do końca).\newline
-		Identyfikacja przypadków użycia koniecznie używając trzech podejść: (slajd 14)\newline
-		Identyfikacja poprzez aktorów,\newline
-		Identyfikacja poprzez zdarzenia,\newline
-		Identyfikacja poprzez funkcje.\newline
-		\newline
+		\section{Systemowe przypadki użycia}
+		Poniżej przedstawione zostały przypadki użycia opisujące interakcję obiektów zewnętrznych z systemem.\newline
+		Opis ma charakter typu BlackBox. Implementacja wewnętrzna systemu jest pomijana na tym etapie. Opis przypadków jest typu Essential, czyli jest wolny od szczegółów technicznych i implementacyjnych.\newline
+
+		\subsection{Identyfikacja przypadków użycia poprzez aktorów}
+		\begin {center}
+		\begin{tabular}{|p{4cm}|p{8cm}|}
+		  \hline
+		  {\bf Aktor} & {\bf Akcja} \\ \hline
+		  \hline
+		  Klient & Logowanie się do systemu \\ \cline{2-2}
+		  & Wylogowanie się z systemu \\ \cline{2-2}
+		  & Dodanie zamówienia \\ \cline{2-2}
+		  & Przeglądanie dotychczasowych zamówień \\ \cline{2-2}
+		  & Przeglądanie szczegółowe jednego zamówienia \\ \cline{2-2}
+		  & Edycja zamówienia \\ \cline{2-2}
+		  & Wycofanie zamówienia \\ \cline{2-2}
+		  & Przeglądanie danych osobistych \\ \cline{2-2}
+		  & Zmiana danych osobistych \\ \cline{2-2}
+		  & Skasowanie konta ??? czy jest to możliwe? na jakich warunkach \\ \cline{2-2}
+		  & ...co jeszcze? \\ \cline{2-2}
+		  \hline
+		  Potencjalny klient & Rejestracja w systemie \\ \cline{2-2}
+		  \hline
+		  Administrator systemu & Logowanie się do systemu na prawach administratora \\ \cline{2-2}
+		  & Wylogowanie się z systemu \\ \cline{2-2}
+		  & Monitorowanie pracy systemu \\ \cline{2-2}
+		  & ...co jeszcze? \\ \cline{2-2}
+		  \hline
+		  Właściciel / analityk & Logowanie się do systemu na prawach pracownika \\ \cline{2-2}
+		  & Wylogowanie się z systemu \\ \cline{2-2}
+		  & Tworzenie zestawień okresowych \\ \cline{2-2}
+		  & Tworzenie statystyk \\ \cline{2-2}
+		  & ...co jeszcze? \\ \cline{2-2}
+		  \hline
+		  ?Kto jeszcze? & co jeszcze? \\ \cline{2-2}
+		  \hline
+		\end{tabular}
+		\end{center}
+
+		\subsection{Identyfikacja przypadków użycia poprzez zdarzenia}
+		\begin {center}
+		\begin{tabular}{|p{6cm}|p{6cm}|}
+		  \hline
+		  {\bf Zdarzenie} & {\bf Odpowiedź, udział aktorów} \\ \hline
+		  \hline
+		  Awaria systemu & System wysyła informację do administratora \\ \hline
+		  Awaria wyświetlacza & System wysyła informację od administratora \\ \hline
+		  Wpłata nie dotarła na określony czas & System wysyła przypomnienie \\ \hline
+		  Wpłata nie została dokonana & System anuluje zamówienie \\ \hline
+		  Klient kasuje swoje konto w systemie & System weryfikuje stan zamówień i płatności klienta \\ \hline
+		  & ...co jeszcze? \\ \cline{2-2}
+		  \hline
+		\end{tabular}
+		\end{center}
+		\subsection{Identyfikacja przypadków użycia poprzez funkcje}
+		\begin {center}
+		\begin{tabular}{|p{6cm}|p{6cm}|}
+		  \hline
+		  {\bf Funkcje systemu} & {\bf Kontekst} \\ \hline
+		  \hline
+		  Dodawanie / usuwanie / edycja / wyswietlanie danych o użytkownikach & ... \\ \hline
+		  Dodawanie / usuwanie / edycja / wyświetlanie danych o zamówieniach & ... \\ \hline
+		  Weryfikacja zamówienia & Przy dodawaniu nowego zamówienia przez klienta \\ \hline
+		  Zestawienie zamówienia z możliwościami systemu & Przy dodawaniu nowego zamówienia przez klienta \\ \hline
+		  Weryfikacja zapłaty za zamówienie & ??? Przy dodawaniu nowego zamówienia przez klienta \\ \hline
+		  Wprowadzenie zamówienia do systemu & Przy dodawaniu nowego zamówienia przez klienta \\ \hline
+		  Tworzenie zestawień danych w systemie & W trakcie pracy analityka \\ \hline
+		  & ...co jeszcze? \\ \cline{2-2}
+		  \hline
+		\end{tabular}
+		\end{center}
+
 		Mając coś takiego możemy weryfikować spójność, kompletność i niesprzeczność :)\newline
 		...wypisać...\newline
+
+		\section{Opis ogólny zidentyfikowanych przypadków użycia systemu}
+
 		\begin {center}
 		\begin{tabular}{|l|p{10cm}|}
 		  \hline
@@ -114,6 +183,8 @@
 		\begin {center}
 		{\bf Przebieg zdarzeń TPU1:}\newline
 		\begin{tabular}{|p{6cm}|p{6cm}|}
+		  \hline
+		  \multicolumn{2}{|l|}{Inicjacja: Zalogowany użytkownik przegląda główne okno interfejsu}\\\hline
 		  \hline
 		  {\bf Aktor} & {\bf System }\\ \hline
 		  \hline \hline
