@@ -78,25 +78,81 @@
 
 	\section{Wstęp}
 
+		Niniejszy dokument zawiera kompletną analizę systemu zarządzania treściami
+		reklamowymi.\\ 
+		
+		Firma ABC dysponuje architekturą sprzętową, przygotowaną do wyświetlania
+		reklam w autobusach, na elektronicznych bilbordach oraz na stronach
+		internetowych. Analiza rynku wykazuje, że zarządzanie tak szeroką architekturą,
+		przy przewidywanej liczbie dostawców treści reklamowych nie jest możliwe
+		bez posiadania efektownych narzędzi wspierajacych proces zarządzania i obsługi
+		posiadanego sprzętu. Aby móc w pełni wykorzystać możliwości platformy sprzętowej
+		konieczne jest stworzenie systemu informatycznego który umożliwi gromadzenie i 
+		przetwarzanie danych. Wobec powyższego zarząd firmy zdecydował o konieczności
+		utworzenia systemu wspierającego proces zbierania zamówień na wyświetlanie
+		treści reklamowych i zarządza procesem przetwarzania zebranych zamówień.\\
+		
+		Podstawowym zadaniem systemu, jest wspomaganie procesu gromadzenia i obsługa
+		treści reklamowych. System wspiera proces w szerokim zakresie interakcji z
+		klientem.\\
+		
+		Zakres możliwości systemu jest funkcjonalnie kompletny, co w tym przypadku
+		oznacza m. in.:\\
+		
+		\begin{itemize}
+		\item zarządzanie danymi klientów,
+		\item zarządzanie urządzeniami przeznaczonymi do wyświetlania treści,
+		\item możliwość automatycznego generowania odpowiedzi na zapytania
+		ofertowe,
+		\item gormadzenie danych o historii transakcji
+		\end{itemize}
+		
+		System stanowi wewnętrzny projekt firmy.
+	
 		\subsection{Opis systemu}
-			W systemie występuje centralny serwer z którym połączone są wyświetlacze reklamowe poprzez sieć internet. Dzięki temu wyświetlacze mogą być rozproszone po każdym obszarze z dostępem do internetu. Do serwera dostęp następuje poprzez przeglądarke WWW. Dzięki takiej architekturze systemu można nim zarządzać z każdego miejsca z dostępem do internetu.
-			\subsubsection{Dostawca treści reklamowej}
-				Dostawca treści ma możliwość zarządzaniem treścią reklamową wyświetlaną na wyświetlaczach. Tworząc nową treść może przetestować ją na testowym wyświetlaczu aby następnie wyświetlić ją na wszystkich wyświetlaczach lub wybranej grupie wyświetlaczy Może tworzyć kampanie, które będą miały określoną datę rozpoczęcia i zakończenia. Dostawców treści może być wielu oraz każdy może mieć ograniczony dostęp tylko do wybranych wyświetlaczy.
-			\subsubsection{Obsługa serwisowa}
-				W celu zapewnienia maksymalnej niezawodności systemu (każdy czas awarii systemu może kosztować dużą kwotę pieniędzy) system powinien być pod nieustanną obserwacją serwisową. System powinien udostępniać informacje na temat stanu wyświetlaczy takich jak:
-				czy występuje połączenie wyświetlacza z serwerem,
- 				w jakich godzinach wyświetlacz działał i był połączony
- 				wystąpienie błędów 
-				Serwisant może wykonać zdalnie test diagnostyczny, który stara się wykryć usterki sprzętowe np. dysku twardego. System umożliwia zdalną aktualizacje oprogramowania na wyświetlaczu oraz zmianę jego konfiguracji np. godziny pracy wyświetlacza. W przypadku awarii wyświetlacza system powinien powiadomić serwisanta odpowiedzialnego za dany terminal drogą mailową i SMS-ową. Serwisant może mieć dostęp tylko do wybranych terminali np. występujących w jego mieście lub województwie. 
-			\subsubsection{Właściciel systemu}
-				Właściciel ma dostęp do tych samych funkcji systemu co dostawca treści i serwisant ponadto ma możliwość zarządzania serwisantami i dostawcami treści. Może dodawać, usuwać im konta w systemie oraz zmieniać hasła i przydzielać im konkretne terminale lub grupy terminali.
-		\subsection{Przeznaczenie systemu}
+		Zarejestrowany w systemie dostawca treści reklamowych (zwany dalej użytkownikiem,
+		lub klientem) podpisuje z ABC umowę, na realizację usług zgodnie ze składanymi
+		w systemie zamówieniami. Nie ma znaczenia czy klient planuje regularną
+		współpracę z ABC, czy też chce zrealizować jednorazowe zamówienie. Osoba posiadająca
+		konto w systemie, jest więc klientem ABC i może wykonywać operacje w ramach
+		udostępnionej klientom części systemu. Z punktu widzenia ABC w zakresie obsługi
+		klienta, system zarządza kontami klientów, wspiera proces przygotowania umowy wstępnej
+		oraz zarządza zamówieniami klientów. System generuje dokumenty dla klientów, ale
+		nie odpowiada za egzekwowanie wynikających z dokumentów zapisów. W szczególności
+		system nie zajmuje się księgowaniem i windykowaniem zobowiązań klientów.
+		Omawianymi zagadnieniami zajmują się kompetentne działy ABC i w związku z tym
+		zagadnienia nie będą omawiane w dokumencie.\\
+		
+		Użytkownik przesyła do systemu zapytanie ofertowe opisujące jego wymagania w zakresie
+		charakteru reklamy, wymagań dotyczących ilości emisji, oraz preferowanego
+		czasu emisji. System przetwarza zapytanie klienta i w odpowiedzi generuje
+		raport zawierający propozycję realizacji zamówienia wraz z harmonogramem
+		emisji opisanych przez klienta treści. System zarządza zamówieniami w
+		taki sposób, żeby maksymalnie efektywnie wykorzystywać architekturę
+		sprzętową firmy.\\
+
+		Na podstawie przetwarzanych zamówień, system generuje odpowiednie zapisy
+		dla urządzeń, dzięki którym określone urządzenie kolejkuje zadania do
+		wykonania. Każde urządzenie komunikuje się z serwerem aby pobrać listę
+		zadań do realizacji. Zamówienia zapisane w systemie są uznawane za pewne,
+		tj. takie które klient zaakceptował, opłacił i wyraził wyraźną chęć ich realizacji.
+		Zgodnie z odpowiednimi zapisami w umowie podpisanej przez klienta, takiego
+		zamówienia nie można odwołać.\\
+		
+		System jest zbudowany w oparciu o architekturę klient-serwer w ramach
+		której użytkownik (klient) komunikuje się z aplikacją przez przeglądarkę
+		www. Zastosowanie takiego modelu pozwala użytkownikowi na uzyskanie dostępu
+		z dowolnego miejsca z dostępem do internetu, dzięki czemu użytkownik w każdej
+		chwili może sprawdzić stan i przebieg swojego zamówienia. Z drugiej pozwala
+		uniknąć kosztownych wdrożeń i aktualizacji. Aplikacja użytkownika jest
+		czytelna i prosta.\\
 
 	\section{Analiza wymagań}
 		\subsection{Wymagania funkcjonalne}
 		    tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!
 		\subsection{Wymagania niefunkcjonalne}
 		    tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!
+	
 	% \cleardoublepage
 	% \pagestyle{fancy}	
 	
