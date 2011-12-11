@@ -60,6 +60,7 @@
 			\hline Wersja  & Data & Kto & Opis  \\ 
 			\hline 00.01 & 01.12.2011 & Marcin Kaczyński & Stworzenie szablonu dokumentu w systemie \LaTeX \\ 
 			\hline 00.02 & 09.12.2011 & Maksymilian Michniewicz & ... \\ 
+			\hline 00.03 & 11.12.2011 & Marek Lewandowski & poprawki we wstępie \\ 
 			\hline 
 		\end{tabular} 
 		\end{table}
@@ -85,12 +86,13 @@
 		reklam w autobusach, na elektronicznych bilbordach oraz na stronach
 		internetowych. Analiza rynku wykazuje, że zarządzanie tak szeroką architekturą,
 		przy przewidywanej liczbie dostawców treści reklamowych nie jest możliwe
-		bez posiadania efektownych narzędzi wspierajacych proces zarządzania i obsługi
+		bez posiadania efektywnych narzędzi wspierajacych proces zarządzania i obsługi
 		posiadanego sprzętu. Aby móc w pełni wykorzystać możliwości platformy sprzętowej
-		konieczne jest stworzenie systemu informatycznego który umożliwi gromadzenie i 
+		konieczne jest stworzenie systemu informatycznego, który umożliwi gromadzenie i 
 		przetwarzanie danych. Wobec powyższego zarząd firmy zdecydował o konieczności
 		utworzenia systemu wspierającego proces zbierania zamówień na wyświetlanie
-		treści reklamowych i zarządza procesem przetwarzania zebranych zamówień.\\
+		treści reklamowych, zarządzanie procesem przetwarzania zebranych zamówień jak 
+		również realizowanie zamówienia\\
 		
 		Podstawowym zadaniem systemu, jest wspomaganie procesu gromadzenia i obsługa
 		treści reklamowych. System wspiera proces w szerokim zakresie interakcji z
@@ -104,13 +106,14 @@
 		\item zarządzanie urządzeniami przeznaczonymi do wyświetlania treści,
 		\item możliwość automatycznego generowania odpowiedzi na zapytania
 		ofertowe,
-		\item gormadzenie danych o historii transakcji
+		\item gromadzenie danych o historii transakcji
 		\end{itemize}
+
 		
 		System stanowi wewnętrzny projekt firmy.
 	
 		\subsection{Opis systemu}
-		Zarejestrowany w systemie dostawca treści reklamowych (zwany dalej użytkownikiem,
+		Zarejestrowany w systemie dostawca treści reklamowych (zwany dalej użytkownikiem
 		lub klientem) podpisuje z ABC umowę, na realizację usług zgodnie ze składanymi
 		w systemie zamówieniami. Nie ma znaczenia czy klient planuje regularną
 		współpracę z ABC, czy też chce zrealizować jednorazowe zamówienie. Osoba posiadająca
@@ -124,7 +127,7 @@
 		zagadnienia nie będą omawiane w dokumencie.\\
 		
 		Użytkownik przesyła do systemu zapytanie ofertowe opisujące jego wymagania w zakresie
-		charakteru reklamy, wymagań dotyczących ilości emisji, oraz preferowanego
+		charakteru reklamy, wymagań dotyczących ilości emisji oraz preferowanego
 		czasu emisji. System przetwarza zapytanie klienta i w odpowiedzi generuje
 		raport zawierający propozycję realizacji zamówienia wraz z harmonogramem
 		emisji opisanych przez klienta treści. System zarządza zamówieniami w
@@ -137,15 +140,16 @@
 		zadań do realizacji. Zamówienia zapisane w systemie są uznawane za pewne,
 		tj. takie które klient zaakceptował, opłacił i wyraził wyraźną chęć ich realizacji.
 		Zgodnie z odpowiednimi zapisami w umowie podpisanej przez klienta, takiego
-		zamówienia nie można odwołać.\\
+		zamówienia nie można odwołać i otrzymać zwrotu opłaty. Można natomiast zrezygnować
+		z emisji, ale opłata nie zostanie zwrócona.\\
 		
 		System jest zbudowany w oparciu o architekturę klient-serwer w ramach
 		której użytkownik (klient) komunikuje się z aplikacją przez przeglądarkę
 		www. Zastosowanie takiego modelu pozwala użytkownikowi na uzyskanie dostępu
 		z dowolnego miejsca z dostępem do internetu, dzięki czemu użytkownik w każdej
-		chwili może sprawdzić stan i przebieg swojego zamówienia. Z drugiej pozwala
-		uniknąć kosztownych wdrożeń i aktualizacji. Aplikacja użytkownika jest
-		czytelna i prosta.\\
+		chwili może sprawdzić stan i przebieg swojego zamówienia jak również dokonać
+		kolejnego zamówienia. Z drugiej pozwala uniknąć kosztownych wdrożeń i aktualizacji.
+		Aplikacja użytkownika jest czytelna i prosta.\\
 
 	\section{Analiza wymagań}
 		\subsection{Wymagania funkcjonalne}
