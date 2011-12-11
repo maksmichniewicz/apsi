@@ -5,7 +5,7 @@
 \usepackage[pdftex]{graphicx} 		% Wsparcie dla obrazkow
 \usepackage{fancyhdr}				% Nagłówki i stopki stron
 									% Marginesy left = wewnetrzny margines
-									
+\usepackage{array}		
 \usepackage[paper=a4paper,twoside,top=2.5cm,bottom=2.5cm,left=2.5cm,right=3cm,bindingoffset=1cm]{geometry}
  
 \fancyhf{}
@@ -23,9 +23,6 @@
 
 \begin{document}	
 
-	%
-	% STRONA TYTUŁOWA
-	%
 	\title{System centralnego zarządzania wyświetlaczami reklamowymi}
 	\author{Marcin Cieślikowski\\
 		Marcin Kaczyński\\
@@ -33,6 +30,41 @@
 		Maksymilian Michniewicz\\}
 	\date{\today}
 	\maketitle
+	
+	\section*{Informacje o dokumencie}
+	
+	\subsubsection*{Metryka dokumentu}
+		\begin{table}[h]
+		\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|m{3cm}|m{2cm}|}
+			\hline \multicolumn{6}{|l|}{Metryka dokumentu} \\ 
+			\hline
+			\hline Projekt: & \multicolumn{3}{|m{6cm}|}{System centralnego zarządzania wyświetlaczami reklamowymi}  & Firma: & Politechnika Warszawska \\ 
+			\hline Nazwa: & \multicolumn{5}{|l|}{Analiza systemu}  \\ 
+			\hline Temat: & \multicolumn{5}{|l|}{Opis wymagań oraz projekt techniczny systemu}  \\ 
+			\hline Autorzy: & \multicolumn{5}{|l|}{Marcin Cieślikowski, Marcin Kaczyński, Marek Lewandowski, Maksymilian Michniewicz}  \\ 
+			\hline Plik: &  \multicolumn{5}{|l|}{\texttt{projekt.pdf}} \\ 
+			\hline Nr. wersji: & \multicolumn{1}{|l|}{00.02} & Status: & Roboczy  & Data sporządzenia: & 11 grudnia 2011 \\ 
+			\hline Streszczenie:  & \multicolumn{5}{|l|}{}  \\ % Jedno zdanie streszczenia 
+			\hline Zatwierdził: & \multicolumn{3}{|l|}{} & Data ostatniej modyfikacji: & \today \\ 
+			\hline 
+		\end{tabular} 
+		\end{table}
+
+	\subsubsection*{Historia zmian}
+		\begin{table}[h]
+		\begin{tabular}{|m{1cm}|m{2cm}|m{3.5cm}|m{6.5cm}|}
+			\hline
+			\multicolumn{4}{|l|}{Historia zmian dokumentu} \\
+			\hline
+			\hline Wersja  & Data & Kto & Opis  \\ 
+			\hline 00.01 & 01.12.2011 & Marcin Kaczyński & Stworzenie szablonu dokumentu w systemie \LaTeX \\ 
+			\hline 00.02 & 09.12.2011 & Maksymilian Michniewicz & ... \\ 
+			\hline 
+		\end{tabular} 
+		\end{table}
+	\newpage
+
+	
 	%
 	% SPIS TRESCI
 	%
@@ -44,7 +76,7 @@
 	%
 
 	\chapter{Wstęp}
-		Ja to skopiowałem z pliku. Prawdopodobnie trzeba zaktualizować.
+
 		\section{Opis systemu}
 			W systemie występuje centralny serwer z którym połączone są wyświetlacze reklamowe poprzez sieć internet. Dzięki temu wyświetlacze mogą być rozproszone po każdym obszarze z dostępem do internetu. Do serwera dostęp następuje poprzez przeglądarke WWW. Dzięki takiej architekturze systemu można nim zarządzać z każdego miejsca z dostępem do internetu.
 			\subsection{Dostawca treści reklamowej}
