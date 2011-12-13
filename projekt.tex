@@ -61,6 +61,7 @@
 			\hline 00.01 & 01.12.2011 & Marcin Kaczyński & Stworzenie szablonu dokumentu w systemie \LaTeX \\ 
 			\hline 00.02 & 09.12.2011 & Maksymilian Michniewicz & ... \\ 
 			\hline 00.03 & 11.12.2011 & Marek Lewandowski & poprawki w wstępie \\ 
+			\hline 00.04 & 13.12.2011 & Marek Lewandowski & uc rejestracja \\ 
 			\hline 
 		\end{tabular} 
 		\end{table}
@@ -260,7 +261,25 @@
 		  Typ & Przebieg typowy \\ \hline
 		  Opis & Użytkownik wprowadza nową reklamę i dane o reklamie i warunki na jakich chce ją wyświetlać. \\ \hline
 		  Warunki początkowe & Użytkownik jest zalogowany \\ \hline
-		  Warunki końcowe & ??? \\
+		  Wynik końcowy & ??? \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Rejestracja użytkownika}\\\hline
+		  \hline
+		  Aktor & Użytkownik \\ \hline
+		  ID & TPU2 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce się zarejestrować w systemie. Pierwszym etapem
+		  rejestracji jest wypełnienie formularza na stronie. Następnym etapem jest podpisanie umowy przez
+		  zainteresowanego, zeskanowanie jej i odesłanie na podany adres w celu
+		  ukończenia rejestracji. \\
+		  \hline Warunki początkowe & Brak \\ \hline
+		  Wynik końcowy & użytkownik zarejestrowany w systemie \\
 		  \hline
 		\end{tabular}
 		\end{center}
@@ -287,6 +306,74 @@
 		  \hline
 		\end{tabular}
 		\end{center}
+		
+		\begin {center}
+		{\bf Przebieg zdarzeń TPU2:}\newline
+		\begin{tabular}{|p{6cm}|p{6cm}|}
+		  \hline
+		  \multicolumn{2}{|l|}{Inicjacja: Klient przegląda stronę główną}\\\hline
+		  \hline
+		  {\bf Aktor} & {\bf System }\\ \hline
+		  \hline \hline
+		  Klient wybiera akcję (naciska przyscisk) `Zarejestruj` & System
+		  wyświetla formularz do rejestracji \\ \hline Klient wypełnia formularz i
+		  wybiera akcję 'Prześlij' & System sprawdza poprawność danych \\ \hline
+		  & System wysyła umowę na mail podany przez klienta\\ \hline
+		  Klient podpisuje umowę, skanuje ją i odsyła & System zawiadamia menadżera
+		  o nowym kliencie.\\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin{description}
+			\item[Przebieg zdarzeń TPU2:]
+			\item[Inicjacja:] Klient przegląda stronę główną 
+			\item[Aktorzy:]  Klient, System, Menadżer
+		\end{description}
+		
+		{\bf Przebieg zdarzeń TPU2:}\newline
+		{\bf Inicjacja:} Klient przegląda stronę główną \newline
+		{\bf Aktorzy:} Klient, System, Menadżer 
+			\begin{enumerate}
+			  \item Klient wybiera akcję (naciska przycisk) 'Zarejestruj'
+			  \item System wyświetla formularz do rejestracji
+			  \item Klient wypełnia formularz i wybiera akcję `Prześlij`
+			  \item System sprawdza poprawność danych
+			  \item System wysyła uzupełnioną umowę na mail podany przez klienta
+			  \item Klient drukuje umowę, podpisuje, skanuje ją i odsyła
+			  \item System zawiadamia menadżera o podpisanej umowie
+			  \item Menadżer zatwierdza umowę z klientem
+			  \item System wysyła maila do klienta o pomyślnej rejestracji
+			\end{enumerate}
+			
+			
+		
+		{\bf Przebieg alternatywny 1: Niepoprawne dane} \newline
+			1. - 4. tak jak w scenariuszu główwym
+			\begin{enumerate}
+			  \setcounter{enumi}{4}
+			  \item System wykrył niezgodność w danych i informuje o tym klienta
+			  \item Klient poprawia dane i wybiera akcję `Prześlij'
+			  \item Tak jak w scenariuszu głównym od 4.
+			\end{enumerate}
+			
+	   {\bf Przebieg alternatywny 2: Umowa nie może zostać podpisana} \newline
+			1. - 7. tak jak w scenariuszu głównym
+			\begin{enumerate}
+			  \setcounter{enumi}{7}
+			  \item Menadżer nie może podpisać umowy (powod np. jakas reguła biznesowa
+			  TO DO USTALENIA)
+			  \item System wysyła maila do klienta o zaistniałej sytuacji
+			\end{enumerate}
+			
+		{\bf Przebieg alternatywny 3: Klient nie odesłał umowy} \newline
+			1. - 5. tak jak w scenariuszu głównym
+			\begin{enumerate}
+			  \setcounter{enumi}{5}
+			  \item Przekroczony został czas oczekiwania na umowę (tutaj na pewno jakas
+			  reguła biznesowa)
+			  \item System odrzuca wniosek o rejestrację.
+			\end{enumerate}
 		
 \cleardoublepage
 %\pagestyle{empty}
