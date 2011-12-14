@@ -65,6 +65,7 @@
 			\hline 00.05 & 13.12.2011 & Marek Lewandowski & wstepe wymagania
 			niefunkcjonalne
 			\\
+			\hline 00.06 & 14.12.2011 & Marek Lewandowski & dokladniejszy opis aktorow \\
 			\hline 
 		\end{tabular} 
 		\end{table}
@@ -222,13 +223,38 @@
 		Tutaj będą przypadki użycia na poziomie ogólnym. Inicjowane są przez aktora, więc "nie wystają na zewnątrz". W zasadzie opisują użycie interfejsu. kominukację uzytkownik - system, od strony uzytkownika.\newline
 		Diagramy aktywności mogą się tutaj przydać, na pewno diagramy typu Use Case nie są tutaj ważne.\newline
 		\subsection{Aktorzy}
-		{\bf Klient} - aktor główny, aktywny - użytkownik zalogowany.\newline
-		{\bf Potencjalny klient} - aktor drugorzędny, aktywny - użytkownik internetu z zewnątrz.\newline
-		{\bf Administrator systemu} - aktor drugorzędny, pasywny - pracownik badający system od strony technicznej - poprawnego działania.\newline
-		{\bf Właściciel / analityk} - aktor główny, aktywny - pracownik robiący statystyki i zestawienia okresowe.\newline
+		\begin{description}
+			\item[Klient] aktor główny, aktywny \newline Klient jest inaczej
+				  zalogowanym użytkownikiem, który ma podpisaną umowę z naszą firmą. Klient wykorzystuje
+				system do składania zamówienia na reklamy, a także zarządzania swoimi
+				zamówieniami oraz reklamami. Na zarządzanie reklamami składa się m.in.
+				dodawanie reklam do systemu, tworzenie ramówki z dodanych reklam oraz
+				usuwania i modyfikacji tychże.
+			\item[Potencjalny klient] aktor drugorzędny, aktywny \newline
+				Potencjalny klient to osoba, która ma prawo tylko i wyłącznie do zarejestrowania się w
+				systemie.
+			W wyniku rejestracji staje się Klientem.
+			\item[Administrator systemu] aktor drugorzędny, pasywny \newline
+				Administrator systemu jest pracownikiem badającym system od strony technicznej
+				- kontrolując poprawność jego działania i reakcję na wszelkie
+				sytuacje wyjątkowe od strony technicznej.
+			\item[Menadżer]  aktor główny, aktywny \newline 
+				Menadżer jest pracownikiem robiącym statystyki i
+				zestawienia okresowe. Menadżer jest odpowiedzialny za zawiązywanie
+				umowy z Potencjalnym Klientem
+			\item[Wyświetlacz]  aktor drugorzędny, pasywny \newline 
+				Wyświetlacz jest urządzeniem wyświetlającym treść reklamową. Wyświetlacz jest
+				zarejestrowany w systemie i odbiera od systemu treść reklamową wraz ze
+				wszystkimi potrzebnymi informacjami do wyświetlenia jej w odpowiednim czasie.
+				Wyświetlacz przesyła także do systemu informacje diagnostyczne związane z jego
+				działaniem.
+		\end{description}
+		
 		...coś jeszcze? wypisać...\newline
-		możliwe, że jest jakiś aktor pasywny - wtedy trzeba go opisać i zapisać kiedy się uaktywnia (co go uaktywnia [tak chyba będzie działał administrator - przynajmniej w akcjach, gdzie ma reagować na niepożądane działanie systemu].)\newline
-		aktorem prawdopodobnie będą także urządzenia - w naszym przypadku wyświetlacze, które będą aktywnie komunikować się z systemem (np wysyłając powiadomienia o błędzie).\newline
+		możliwe, że jest jakiś aktor pasywny - wtedy trzeba go opisać i zapisać kiedy się uaktywnia (co go uaktywnia [tak chyba będzie działał administrator - przynajmniej w akcjach, gdzie ma reagować na niepożądane działanie systemu].)
+		\newline aktorem prawdopodobnie będą także urządzenia - w naszym przypadku wyświetlacze, które będą aktywnie komunikować się z systemem (np wysyłając powiadomienia o błędzie).\newline
+		
+		 
 		\subsection{Systemowe przypadki użycia}
 		Poniżej przedstawione zostały przypadki użycia opisujące interakcję obiektów zewnętrznych z systemem.\newline
 		Opis ma charakter typu BlackBox. Implementacja wewnętrzna systemu jest pomijana na tym etapie. Opis przypadków jest typu Essential, czyli jest wolny od szczegółów technicznych i implementacyjnych.\newline
@@ -388,8 +414,9 @@
 		\end{description}
 		
 		{\bf Przebieg zdarzeń TPU2:}\newline
-		{\bf Inicjacja:} Klient przegląda stronę główną \newline
-		{\bf Aktorzy:} Klient, System, Menadżer 
+		{\bf Inicjacja:}Potencjalny klient przegląda stronę główną
+		\newline {\bf Aktorzy:}Potencjalny klient (dalej jako Klient), System,
+		Menadżer
 			\begin{enumerate}
 			  \item Klient wybiera akcję (naciska przycisk) 'Zarejestruj'
 			  \item System wyświetla formularz do rejestracji
