@@ -416,11 +416,29 @@
 		\begin {center}
 		\begin{tabular}{|l|p{10cm}|}
 		  \hline
-		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Usunięcie treści
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Modyfikacja treści
 		  reklamowej - rozszerza TPU15}\\\hline
 		  \hline
 		  Aktor & Klient \\ \hline
 		  ID & TPU17 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce zmodyfikować treść reklamową. W tym celu musi wybrać
+		  odpowiedni plik i zacząć edycję jego atrybutów np. opisu.
+		  \\
+		  \hline Warunki początkowe & Klient zalogowany \\ \hline
+		  Wynik końcowy & Treść reklamowa zmodyfikowana  \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Usunięcie treści
+		  reklamowej - rozszerza TPU15}\\\hline
+		  \hline
+		  Aktor & Klient \\ \hline
+		  ID & TPU18 \\ \hline
 		  Typ & Przebieg typowy \\ \hline
 		  Opis & Użytkownik chce usunąć treść reklamową, która nie będzie mu już
 		  potrzebna. Przegląda swoją dostępna treść reklamową i usuwa tą która chce.
@@ -431,23 +449,6 @@
 		\end{tabular}
 		\end{center}
 		
-		\begin {center}
-		\begin{tabular}{|l|p{10cm}|}
-		  \hline
-		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Modyfikacja treści
-		  reklamowej - rozszerza TPU15}\\\hline
-		  \hline
-		  Aktor & Klient \\ \hline
-		  ID & TPU18 \\ \hline
-		  Typ & Przebieg typowy \\ \hline
-		  Opis & Użytkownik chce zmodyfikować treść reklamową. W tym celu musi wybrać
-		  odpowiedni plik i zacząć edycję jego atrybutów np. opisu.
-		  \\
-		  \hline Warunki początkowe & Klient zalogowany \\ \hline
-		  Wynik końcowy & Treść reklamowa zmodyfikowana  \\
-		  \hline
-		\end{tabular}
-		\end{center}
 		
 		\begin {center}
 		\begin{tabular}{|l|p{10cm}|}
@@ -564,30 +565,7 @@
 		\end{tabular}
 		\end{center}
 		
-		\begin{description}
-			\item[Przebieg zdarzeń TPU2:]
-			\item[Inicjacja:] Klient przegląda stronę główną 
-			\item[Aktorzy:]  Klient, System, Menadżer
-		\end{description}
-		
-		{\bf Przebieg zdarzeń TPU2:}\newline
-		{\bf Inicjacja:}Potencjalny klient przegląda stronę główną
-		\newline {\bf Aktorzy:}Potencjalny klient (dalej jako Klient), System,
-		Menadżer
-			\begin{enumerate}
-			  \item Klient wybiera akcję (naciska przycisk) 'Zarejestruj'
-			  \item System wyświetla formularz do rejestracji
-			  \item Klient wypełnia formularz i wybiera akcję `Prześlij`
-			  \item System sprawdza poprawność danych
-			  \item System wysyła uzupełnioną umowę na mail podany przez klienta
-			  \item Klient drukuje umowę, podpisuje, skanuje ją i odsyła
-			  \item System zawiadamia menadżera o podpisanej umowie
-			  \item Menadżer zatwierdza umowę z klientem
-			  \item System wysyła maila do klienta o pomyślnej rejestracji
-			\end{enumerate}
-			
-			
-		
+
 		{\bf Przebieg alternatywny 1: Niepoprawne dane} \newline
 			1. - 4. tak jak w scenariuszu główwym
 			\begin{enumerate}
@@ -615,8 +593,94 @@
 			  \item System odrzuca wniosek o rejestrację.
 			\end{enumerate}
 		
+		{\bf Przebieg zdarzeń TPU15 Zarządzanie treścią reklamową:}\newline
+		{\bf Inicjacja:}Klient znaduje się w panelu klienta
+		\newline {\bf Aktorzy:} Klient
+			\begin{enumerate}
+			  \item Klient wybiera akcję (naciska przycisk) 'Moje reklamy'
+			  \item System wyświetla panel zarządzania treściami reklamowymi i wyświetla
+			   listę treści reklamowych klienta
+			\end{enumerate}
 		
-		
+		{\bf Przebieg zdarzeń TPU16 Dodanie treści reklamowej:}\newline
+		{\bf Inicjacja:}Klient znaduje się w panelu zarządzania treściami reklamowymi
+		\newline {\bf Aktorzy:} Klient
+			\begin{enumerate}
+			  \item Klient wybiera akcję (naciska przycisk) 'Dodaj'
+			  \item System wyświetla formularz dodawania treści reklamowej
+			  \item Klient wybiera plik, który chcę dodać i podaje opcjonalne dane i
+			  naciska przycisk 'Dodaj'
+			\end{enumerate}
+			
+		{\bf Przebieg zdarzeń TPU17 Modyfikacja treści reklamowej:}\newline
+		{\bf Inicjacja:}Klient znaduje się w zarządzania treściami reklamowymi
+		\newline {\bf Aktorzy:} Klient
+			\begin{enumerate}
+			  \item Klient zaznacza treść, która chce zmodyfikować i naciska przycisk
+			  'Zmień'
+			  \item System wyświetla formularz z polami zawierającymi dane wybranej
+			  treści reklamowej
+			  \item Klient dokonuje odpowiednich zmian w treści i naciska przycisk
+			  'Zapisz'
+			  \item System zapisuje zmiany i wyświetla panel zarządzania treściami
+			  reklamowymi
+			\end{enumerate}
+			
+		{\bf Przebieg zdarzeń TPU18 Usunięcie treści reklamowej:}\newline
+		{\bf Inicjacja:}Klient znaduje się w zarządzania treściami reklamowymi
+		\newline {\bf Aktorzy:} Klient
+			\begin{enumerate}
+			  \item Klient zaznacza treść, która chce zmodyfikować i naciska przycisk
+			  'Usuń'
+			  \item System pyta o potwierdzenie
+			  \item Klient potwierdza wybór
+			  \item System usuwa zaznaczoną treść
+			\end{enumerate}
+			
+		{\bf Przebieg zdarzeń TPU25 Zarządzanie Zarządzanie ramówką:}\newline
+		{\bf Inicjacja:}Klient znaduje się w panelu klienta
+		\newline {\bf Aktorzy:} Klient
+			\begin{enumerate}
+			  \item Klient wybiera akcję (naciska przycisk) 'Moje ramówki'
+			  \item System wyświetla panel zarządzania ramówkami reklamowymi oraz
+			  dostępne ramówki klienta
+			\end{enumerate}
+			
+		{\bf Przebieg zdarzeń TPU26 Dodanie ramówki:}\newline
+		{\bf Inicjacja:}Klient znaduje się w panelu zarządzania ramówkami
+		\newline {\bf Aktorzy:} Klient
+			\begin{enumerate}
+			  \item Klient wybiera akcję (naciska przycisk) 'Dodaj'
+			  \item System wyświetla formularz dodawania ramówki oraz listę dostępnych
+			  treści reklamowych
+			  \item Klient podaje dane ramówki oraz wybiera i porządkuje te treści
+			  reklamowe, które mają zostać wyświetlone po czym naciska przycisk 'Dodaj'
+			  \item System dodaje ramówkę do ramówek klienta
+			\end{enumerate}
+			
+		{\bf Przebieg zdarzeń TPU27 Modyfikacja ramówki:}\newline
+		{\bf Inicjacja:}Klient znaduje się w panelu zarządzania ramówkami
+		\newline {\bf Aktorzy:} Klient
+			\begin{enumerate}
+			  \item Klient zaznacza ramówkę, która chce zmodyfikować i naciska przycisk
+			  'Zmień'
+			  \item System wyświetla formularz z danymi ramówki oraz uprządkowaną listę
+			  treści reklamowych związanych z ramówką
+			  \item Klient dokonuje odpowiednich zmian w ramówce i naciska przycisk
+			  'Zapisz'
+			  \item System zapisuje modyfikacje w ramówce
+			\end{enumerate}
+			
+		{\bf Przebieg zdarzeń TPU28 Usunięcie ramówki:}\newline
+		{\bf Inicjacja:}Klient znaduje się w panelu zarządzania ramówkami
+		\newline {\bf Aktorzy:} Klient
+			\begin{enumerate}
+			  \item Klient zaznacza ramówkę, która chce usunąć i naciska przycisk
+			  'Usuń'
+			  \item System pyta o potwierdzenie
+			  \item Klient potwierdza wybór
+			  \item System usuwa zaznaczoną ramówkę
+			\end{enumerate}
 		
 \cleardoublepage
 %\pagestyle{empty}
