@@ -224,7 +224,7 @@
 		Diagramy aktywności mogą się tutaj przydać, na pewno diagramy typu Use Case nie są tutaj ważne.\newline
 		\subsection{Aktorzy}
 		\begin{description}
-			\item[Klient] aktor główny, aktywny \newline Klient jest inaczej
+			\item[Klient/Użytkownik] aktor główny, aktywny \newline Klient jest inaczej
 				  zalogowanym użytkownikiem, który ma podpisaną umowę z naszą firmą. Klient wykorzystuje
 				system do składania zamówienia na reklamy, a także zarządzania swoimi
 				zamówieniami oraz reklamami. Na zarządzanie reklamami składa się m.in.
@@ -275,6 +275,14 @@
 		  & Przeglądanie danych osobistych \\ \cline{2-2}
 		  & Zmiana danych osobistych \\ \cline{2-2}
 		  & Skasowanie konta ??? czy jest to możliwe? na jakich warunkach \\ \cline{2-2}
+		  & Zarządzanie treścią reklamową \\ \cline{2-2}
+		  & Dodanie treści reklamowej \\ \cline{2-2}
+		  & Usunięcie treści reklamowej \\ \cline{2-2}
+		  & Modyfikacja treści reklamowej \\ \cline{2-2}
+		  & Zarządzanie ramówką \\ \cline{2-2}
+		  & Dodanie reklamy do ramówki \\ \cline{2-2}
+		  & Usunięcie reklamy z ramówki \\ \cline{2-2}
+		  & Modyfikacja ramówki \\ \cline{2-2}
 		  & ...co jeszcze? \\ \cline{2-2}
 		  \hline
 		  Potencjalny klient & Rejestracja w systemie \\ \cline{2-2}
@@ -351,21 +359,170 @@
 		\begin {center}
 		\begin{tabular}{|l|p{10cm}|}
 		  \hline
-		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Rejestracja użytkownika}\\\hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Rejestracja klienta}\\\hline
 		  \hline
-		  Aktor & Użytkownik \\ \hline
+		  Aktor & Potencjalny klient \\ \hline
 		  ID & TPU2 \\ \hline
 		  Typ & Przebieg typowy \\ \hline
-		  Opis & Użytkownik chce się zarejestrować w systemie. Pierwszym etapem
+		  Opis & Potencjalny klient chce się zarejestrować w systemie. Pierwszym etapem
 		  rejestracji jest wypełnienie formularza na stronie. Następnym etapem jest podpisanie umowy przez
 		  zainteresowanego, zeskanowanie jej i odesłanie na podany adres w celu
 		  ukończenia rejestracji. \\
 		  \hline Warunki początkowe & Brak \\ \hline
-		  Wynik końcowy & użytkownik zarejestrowany w systemie \\
+		  Wynik końcowy & klient zarejestrowany w systemie \\
 		  \hline
 		\end{tabular}
 		\end{center}
 
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Zarządzanie treścią reklamową}\\\hline
+		  \hline
+		  Aktor & Klient \\ \hline
+		  ID & TPU15 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce zarządzać treścią reklamową. Jest to przypadek
+		  użycia, który będzie rozszerzany przez konkretne przypadki użycia takie jak
+		  dodanie, usunięcie, modyfikacja treści reklamowej. Treść reklamowa jest
+		  zbiorem wszystkich materiałów reklamowych jakie do tej pory dany klient
+		  zgromadził w systemie.
+		  \\
+		  \hline Warunki początkowe & Klient zalogowany \\ \hline
+		  Wynik końcowy & Klient znajduje się w menu zarządzania treścią reklamową  \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Dodanie treści
+		  reklamowej - rozszerza TPU15}\\\hline
+		  \hline
+		  Aktor & Klient \\ \hline
+		  ID & TPU16 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce dodać treść reklamową. W tym celu musi wybrać
+		  odpowiedni plik i przesłać go do systemu. Użytkownik może podać opis pliku i
+		  nazwę pod jaką plik będzie funkcjonował w systemie.
+		  \\
+		  \hline Warunki początkowe & Klient zalogowany \\ \hline
+		  Wynik końcowy & Treść reklamowa dodana  \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Usunięcie treści
+		  reklamowej - rozszerza TPU15}\\\hline
+		  \hline
+		  Aktor & Klient \\ \hline
+		  ID & TPU17 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce usunąć treść reklamową, która nie będzie mu już
+		  potrzebna. Przegląda swoją dostępna treść reklamową i usuwa tą która chce.
+		  \\
+		  \hline Warunki początkowe & Klient zalogowany \\ \hline
+		  Wynik końcowy & Treść reklamowa usunięta  \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Modyfikacja treści
+		  reklamowej - rozszerza TPU15}\\\hline
+		  \hline
+		  Aktor & Klient \\ \hline
+		  ID & TPU18 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce zmodyfikować treść reklamową. W tym celu musi wybrać
+		  odpowiedni plik i zacząć edycję jego atrybutów np. opisu.
+		  \\
+		  \hline Warunki początkowe & Klient zalogowany \\ \hline
+		  Wynik końcowy & Treść reklamowa zmodyfikowana  \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Zarządzanie ramówką}\\\hline
+		  \hline
+		  Aktor & Klient \\ \hline
+		  ID & TPU25 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce zarządzać ramówką. Jest to przypadek
+		  użycia, który będzie rozszerzany przez konkretne przypadki użycia takie jak
+		  dodanie, usunięcie, modyfikacja ramówki. Ramówka jest uporządkowaną
+		  listą materiałów reklamowych, które mają być podane emisji.
+		  \\
+		  \hline Warunki początkowe & Klient zalogowany \\ \hline
+		  Wynik końcowy & Klient znajduje się w menu zarządzania ramówką  \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Dodanie ramówki - rozszerza TPU25}\\\hline
+		  \hline
+		  Aktor & Klient \\ \hline
+		  ID & TPU26 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce dodać ramówkę. W tym celu musi określić jej nazwę
+		  oraz stworzyć listę treści reklamowych które mają się w tej ramówce znaleźć.
+		  \\
+		  \hline Warunki początkowe & Klient zalogowany \\ \hline
+		  Wynik końcowy & Ramówka dodana  \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Modyfikacja ramówki - rozszerza
+		  TPU25}\\\hline
+		  \hline
+		  Aktor & Klient \\ \hline
+		  ID & TPU27 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce zmodyfikować ramówkę. W tym celu musi wybrać ramówkę,
+		  która ma być poddana edycji poprzez wybranie odpowiedniej nazwy ramówki i
+		  edytowanie jej np. dodając nową treść reklamową lub zmieniając
+		  uporządkowanie reklam.
+		  \\
+		  \hline Warunki początkowe & Klient zalogowany \\ \hline
+		  Wynik końcowy & Ramówka zmodyfikowana  \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
+		\begin {center}
+		\begin{tabular}{|l|p{10cm}|}
+		  \hline
+		  \multicolumn{2}{|c|}{\bf Przypadek użycia - Usunięcie ramówki - rozszerza TPU25}\\\hline
+		  \hline
+		  Aktor & Klient \\ \hline
+		  ID & TPU28 \\ \hline
+		  Typ & Przebieg typowy \\ \hline
+		  Opis & Użytkownik chce usunąć ramówkę. W tym celu musi wybrać ramówkę, która
+		  ma zostać usunięta i usunąć ją. Treść reklamowa ramówki pozostaje w
+		  systemie.
+		  \\
+		  \hline Warunki początkowe & Klient zalogowany \\ \hline
+		  Wynik końcowy & Ramówka usunięta  \\
+		  \hline
+		\end{tabular}
+		\end{center}
+		
 		Pamiętać o:\newline
 		Przebieg zdarzeń:\newline
 		*typowy,\newline
@@ -457,6 +614,9 @@
 			  reguła biznesowa)
 			  \item System odrzuca wniosek o rejestrację.
 			\end{enumerate}
+		
+		
+		
 		
 \cleardoublepage
 %\pagestyle{empty}
