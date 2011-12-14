@@ -159,38 +159,60 @@
 		\subsection{Wymagania funkcjonalne}
 		    tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!tekstu, więcej tekstu!!!
 		\subsection{Wymagania niefunkcjonalne}
-		   \begin{itemize}
-		     \item System powinien zapewniać dostępność na poziomie 90\%
-		     \item Wyświetlacz w razie awarii powinien być naprawiony w ciągu 24h
-		     \item Restart systemu i powrót do pełnej funkcjonalności nie może
+		%	
+		%	Trzeba by się jeszcze upewnić czy każde z wymagan jest we właściwym miejscu
+		% (ilościowe / jakościowe). Zastanawiam się również nad tym czy nie należało
+		% by wyspecyfikować jakie to jest dokładnie wymaganie typu
+		%	- bezpieczenstwo
+		%				- System powinien blablabla
+		%	- niezawodnosc
+		%				- blablabla
+		%				- blablabla
+		%
+		   \begin{enumerate}
+		     
+		     \item Wymagania ilościowe
+		     
+		     	\begin{itemize}
+		     	  \item System powinien zapewniać dostępność na poziomie 90\%
+		     	  \item Restart systemu i powrót do pełnej funkcjonalności nie może
 		     przekroczyć 3h
-		     \item Główna część systemu powiniena zapewniać bezpieczeństwo klasy
-		     Contract Business (niezła beka SPRAWDZIC CZY TO NIE SIE NIE POMYLILEM)
-		     \begin{itemize}
-		      \item Pozostałe informacje powinny być dostępne publicznie
-		     \end{itemize}
-		     \item System powinien pozwolić na obsługę do 100.000 klientów
-		     jednocześnie
-		     \item System powinien pozwolić na obsługę do 25.000 wyświetlaczy na
+		     	  \item System powinien pozwolić na obsługę do 100.000 klientów
+		     	  jednocześnie
+		     	  \item System powinien pozwolić na obsługę do 25.000 wyświetlaczy na
 		     terenie Polski
-		     \item System powinien przechowywać materiały reklamowe klientów z okresu
-		     ostatnich 3 miesięcy. Po tym okresie nie musi ich archiwizować.
-		     \item System powinien być obsługiwalnym przez jednego administratora.
-		     \item System powinien wykonywać swoje funkcje związane z wyświetlaniem
-		     reklam klinetów w 100\% poprawnie
-		     \item System powinien być łatwo kontrolowalnym przez administratora i
-		     serwisantów
-		     \item System powinien działać poprawnie pomimo awarii części z
-		     wyświetlaczy
-		     \item System powinien być prosty w obsłudze i zrozumiały dla użytkowników
-		     \item System powinien umożliwiać przetłumaczenie go na inny język jeśli
-		     zapadnie taka decyzja w przyszłości
-		     \item Dane klientów powinny być przechowywane zgodnie aktualną ustawą o
-		     przechowywaniu danych osobowych
-		     \item System powinien być dostępny z każdego komputera z dostępem do
-		     internetu wyposażonego w przeglądarke www
-		     \item System powinien być testowalny automatycznie
-		   \end{itemize}
+		     	\end{itemize}
+		     	
+		     \item Wymagania jakościowe
+				
+				\begin{itemize}
+					\item Wyświetlacz w razie awarii powinien być naprawiony lub wymieniony w
+					ciągu 24h
+					\item Główna część systemu powiniena zapewniać bezpieczeństwo klasy
+					  Contract Business (niezła beka SPRAWDZIC CZY TO NIE SIE NIE POMYLILEM)
+						 \begin{itemize}
+					      \item Pozostałe informacje powinny być dostępne publicznie
+					     \end{itemize}
+					\item System powinien przechowywać materiały reklamowe klientów z okresu
+					    ostatnich 3 miesięcy. Po tym okresie nie musi ich archiwizować.
+					\item System powinien być obsługiwalnym przez jednego administratora.
+					\item System powinien wykonywać swoje funkcje związane z wyświetlaniem
+					    reklam klinetów w 100\% poprawnie
+					\item System powinien być łatwo kontrolowalnym przez administratora i
+						 serwisantów
+					\item System powinien działać poprawnie pomimo awarii części z
+						  wyświetlaczy
+					\item System powinien być prosty w obsłudze i zrozumiały dla użytkowników
+					\item System powinien umożliwiać przetłumaczenie go na inny język jeśli
+					     zapadnie taka decyzja w przyszłości
+					\item Dane klientów powinny być przechowywane zgodnie aktualną ustawą o
+					     przechowywaniu danych osobowych
+					\item System powinien być dostępny z każdego komputera z dostępem do
+					     internetu wyposażonego w przeglądarke www
+					\item System powinien być testowalny automatycznie
+				\end{itemize}
+		   \end{enumerate}
+		  
 	
 	% \cleardoublepage
 	% \pagestyle{fancy}	
@@ -428,7 +450,6 @@
 				ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
 				in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
 				cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			\item[Test] Nawet nie pytajcie po co to dodałem ;)
 		\end{description}
 	
 \end{document}
